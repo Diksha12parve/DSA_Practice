@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM Event Listener</title>
+</head>
+<body>
+    <div id="root">
+       <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+       <button>Reset</button>
+    </div>
+    <script>
+        document.querySelector("p").addEventListener("click", function(){
+            document.querySelector("body").style.backgroundColor = "pink";
+        });
+
+        document.querySelector("p").addEventListener("click", function(){
+            document.querySelector("p").innerHTML = "Multiple event";
+        });
+
+        document.querySelector("p").addEventListener("mouseover", function(){
+            document.querySelector("p").innerHTML = "Mouse Over";
+        });
+
+        document.querySelector("p").addEventListener("mouseover", mouseOverFunction)
+        
+       function mouseOverFunction(){
+        document.querySelector("p").innerHTML = "mouse Over";
+       }
+
+        document.querySelector("button").addEventListener("click", function(){
+            document.querySelector("p").removeEventListener("mouseover", mouseOverFunction);
+        })
+
+        window.addEventListener("resize", setText);
+
+        function setText() {
+            document.querySelector("button").innerHTML = "window";
+        }
+    </script>
+</body>
+</html>

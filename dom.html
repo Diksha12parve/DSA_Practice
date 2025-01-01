@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="root">
+        <h1 class="header">Learning Dom Manipulation</h1>
+        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nulla iste optio doloribus quis,
+             vero voluptates repellat nam odit voluptas temporibus,
+             nesciunt facilis numquam quasi cumque a veniam, quo quibusdam rem?</p>
+             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+             <img  id="myImg" src="park.jpg" alt="">
+    </div>
+
+    <script>
+        const rootNode = document.getElementById("root");
+        console.log(rootNode);
+
+        const paragraph = document.getElementsByTagName("p");
+        console.log(paragraph);
+
+        const headerClassElements = document.getElementsByClassName("header");
+        console.log(headerClassElements); 
+
+        const element = document.querySelector("p");  // #id  // .id
+        console.log(element);
+
+        const header = document.querySelector(".header");
+        header.innerHTML = "DOM Manipulation in js";
+        document.getElementById("myImg").src ="https://upload.wikimedia.org/wikipedia/commons/thumb/4/45/Eopsaltria_australis_-_Mogo_Campground.jpg/800px-Eopsaltria_australis_-_Mogo_Campground.jpg";
+        document.getElementById("newpara").innerHTML = "<h3>Hello</h3>" 
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Bubbling Capturing</title>
+</head>
+<body>
+    <div id="div1" style="height: 250px; width: 250px; background-color: aqua;">
+        <h1>Event Bubbling</h1>
+        <p id="para1"  style="border: 1px solid black;">
+            Lorem ipsum dolor sit amet.
+        </p>
+    </div>
+    <div id="div2" style="height: 250px; width: 250px; background-color: aqua;">
+        <h1>Event Capturing</h1>
+        <p id="para2" style="border: 1px solid black;">
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit.</p>
+    </div>
+    <script>
+        document.getElementById("div1").addEventListener("click", function(){
+            alert("Outer element is clicked")
+        }, false);
+
+        document.getElementById("para1").addEventListener("click", function(){
+            alert("Inner element is clicked")
+        }, false);
+
+        document.getElementById("div2").addEventListener("click", function(){
+            alert("Outer element is clicked")
+        }, true);
+
+        document.getElementById("para2").addEventListener("click", function(){
+            alert("Inner element is clicked")
+        }, true);
+    </script>
+</body>
+</html>
